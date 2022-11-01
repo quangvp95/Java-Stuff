@@ -1,0 +1,5 @@
+như bạn có thể thấy, việc phát hiện xem một chuỗi có được chuẩn hóa hay không có thể khá hiệu quả.rất nhiều chi phí chuẩn hóa trong “ hàng thứ hai ” là để khởi tạo bộ đệm, chi phí được khấu hao khi một người đang xử lý các chuỗi lớn hơn.
+
+  Hóa ra, những bộ đệm này hiếm khi cần thiết,vì vậy chúng tôi có thể: thay đổi việc triển khai tại một số điểm để tăng tốc trường hợp phổ biến cho các chuỗi nhỏ hơn nữa
+
+
