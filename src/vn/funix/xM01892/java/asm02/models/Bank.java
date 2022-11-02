@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class Bank {
-    private String id;
+    private final String id;
     private final List<Customer> customers;
 
     public Bank() {
@@ -28,8 +28,10 @@ public class Bank {
 
     public void addCustomer(String customerId, Account account) {
         for (Customer i : customers) {
-            if (i.getCustomerId().equals(customerId))
+            if (i.getCustomerId().equals(customerId)) {
+                i.addAccount(account);
                 return;
+            }
         }
         Customer customer = new Customer();
         customer.setCustomerId(customerId);

@@ -11,26 +11,36 @@ public class Asm02 {
 
     private static final Bank bank = new Bank();
 
+    static {
+        Customer customer1 = new Customer();
+        customer1.setName("asldfk");
+        customer1.setCustomerId("001215000001");
+        bank.addCustomer(customer1);
+
+        Customer customer2 = new Customer();
+        customer2.setName("customer2");
+        customer2.setCustomerId("079025000002");
+        bank.addCustomer(customer2);
+
+        Account account1 = new Account();
+        account1.setAccountNumber("123456");
+        account1.setBalance(1000000);
+        bank.addCustomer("001215000001", account1);
+
+        Account account2 = new Account();
+        account2.setAccountNumber("654123");
+        account2.setBalance(1000000);
+        bank.addCustomer("037153000003", account2);
+
+        Account account3 = new Account();
+        account3.setAccountNumber("111111");
+        account3.setBalance(100000000);
+        bank.addCustomer("001215000001", account3);
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         onboard();
-//        int function = inputFunction(input, 0, 1);
-//        if (function == 0) {
-//            input.close();
-//            return;
-//        }
-//        // function == 1
-//        if (!verify(input)) {
-//            input.close();
-//            return;
-//        }
-//        inputIdentification();
-//        Identification identification = getCCCD(input);
-//        if (identification == null) {
-//            input.close();
-//            return;
-//        }
-//        // identification valid
         int function;
         do {
             showFunction();
@@ -199,7 +209,7 @@ public class Asm02 {
         Province mProvince;
         Gender mGender;
         String mId;
-        private String identification;
+        private final String identification;
 
         public Identification(String identification) {
             this.identification = identification = identification.trim();
@@ -228,19 +238,6 @@ public class Asm02 {
                 throw new RuntimeException("gender and birth invalid: " + gender + " - " + birth);
             }
         }
-
-        void showProvince() {
-            System.out.println("Noi sinh: " + mProvince.mName);
-        }
-
-        void showAge() {
-            System.out.println("Gioi tinh: " + mGender);
-        }
-
-        void showId() {
-            System.out.println("So ngau nhien: " + mId);
-        }
-
     }
 
     static class Province {

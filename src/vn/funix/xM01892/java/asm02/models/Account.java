@@ -21,7 +21,7 @@ public class Account {
     }
 
     public boolean isPremium() {
-        return balance > 10000000;
+        return balance >= 10000000;
     }
 
     @Override
