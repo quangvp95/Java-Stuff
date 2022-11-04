@@ -2,6 +2,7 @@ package vn.funix.xM01892.java.asm02.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 public class Bank {
@@ -33,10 +34,6 @@ public class Bank {
                 return;
             }
         }
-        Customer customer = new Customer();
-        customer.setCustomerId(customerId);
-        customer.addAccount(account);
-        customers.add(customer);
     }
 
     public boolean isCustomerExisted(String customerId) {
@@ -51,6 +48,23 @@ public class Bank {
         for (Customer i : customers) {
             i.displayInformation();
         }
+    }
+
+    public Customer searchCCCD(String cccd) {
+        for (Customer i : customers) {
+            if (i.getCustomerId().equals(cccd))
+                return i;
+        }
+        return null;
+    }
+
+    public List<Customer> searchCustomers(String name) {
+        List<Customer> list = new ArrayList<>();
+        for (Customer i : customers) {
+            if (i.getName().toLowerCase(Locale.ROOT).contains(name.toLowerCase(Locale.ROOT)))
+                list.add(i);
+        }
+        return list;
     }
 
     public List<Customer> getCustomers() {
