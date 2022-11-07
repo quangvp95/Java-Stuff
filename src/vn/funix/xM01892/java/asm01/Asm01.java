@@ -153,13 +153,15 @@ public class Asm01 {
         System.out.println("    | 0. Thoat");
     }
 
-    static class Identification {
+    public static class Identification {
         Province mProvince;
         Gender mGender;
         String mId;
 
+        public final String identification;
+
         public Identification(String identification) {
-            identification = identification.trim();
+            this.identification = identification = identification.trim();
             if (identification.length() != 12 || !identification.matches("^\\d+$")) {
                 throw new RuntimeException("Identification is not 12 digits");
             }

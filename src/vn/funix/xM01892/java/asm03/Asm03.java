@@ -1,4 +1,4 @@
-package vn.funix.xM01892.java.asm02;
+package vn.funix.xM01892.java.asm03;
 
 import vn.funix.xM01892.java.asm01.Asm01.Identification;
 import vn.funix.xM01892.java.asm02.models.Account;
@@ -9,66 +9,66 @@ import java.util.List;
 import java.util.Scanner;
 
 @SuppressWarnings("SameParameterValue")
-public class Asm02 {
+public class Asm03 {
 
     private static final Bank bank = new Bank();
 
-    static {
-        Customer customer1 = new Customer();
-        customer1.setName("Huy Quang");
-        customer1.setCustomerId("001215000001");
-        bank.addCustomer(customer1);
-
-        Account account1 = new Account();
-        account1.setAccountNumber("123456");
-        account1.setBalance(1000000);
-        bank.addCustomer(customer1.getCustomerId(), account1);
-
-        Account account3 = new Account();
-        account3.setAccountNumber("111111");
-        account3.setBalance(100000000);
-        bank.addCustomer(customer1.getCustomerId(), account3);
-
-        Account account4 = new Account();
-        account4.setAccountNumber("111112");
-        account4.setBalance(1000000);
-        bank.addCustomer(customer1.getCustomerId(), account4);
-
-        Customer customer2 = new Customer();
-        customer2.setName("Hong Quang");
-        customer2.setCustomerId("079025000002");
-        bank.addCustomer(customer2);
-
-        Account account2 = new Account();
-        account2.setAccountNumber("654123");
-        account2.setBalance(1000000);
-        bank.addCustomer("037153000003", account2);
-
-        Customer customer3 = new Customer();
-        customer3.setName("Quang Minh");
-        customer3.setCustomerId("001215000002");
-        bank.addCustomer(customer3);
-
-        Account account5 = new Account();
-        account5.setAccountNumber("123455");
-        account5.setBalance(1000000);
-        bank.addCustomer(customer3.getCustomerId(), account5);
-
-        Account account6 = new Account();
-        account6.setAccountNumber("111114");
-        account6.setBalance(100000000);
-        bank.addCustomer(customer3.getCustomerId(), account6);
-
-        Customer customer4 = new Customer();
-        customer4.setName("Hong Minh");
-        customer4.setCustomerId("001215000003");
-        bank.addCustomer(customer4);
-
-        Account account7 = new Account();
-        account7.setAccountNumber("123457");
-        account7.setBalance(1000000);
-        bank.addCustomer(customer4.getCustomerId(), account7);
-    }
+//    static {
+//        Customer customer1 = new Customer();
+//        customer1.setName("Huy Quang");
+//        customer1.setCustomerId("001215000001");
+//        bank.addCustomer(customer1);
+//
+//        Account account1 = new Account();
+//        account1.setAccountNumber("123456");
+//        account1.setBalance(1000000);
+//        bank.addCustomer(customer1.getCustomerId(), account1);
+//
+//        Account account3 = new Account();
+//        account3.setAccountNumber("111111");
+//        account3.setBalance(100000000);
+//        bank.addCustomer(customer1.getCustomerId(), account3);
+//
+//        Account account4 = new Account();
+//        account4.setAccountNumber("111112");
+//        account4.setBalance(1000000);
+//        bank.addCustomer(customer1.getCustomerId(), account4);
+//
+//        Customer customer2 = new Customer();
+//        customer2.setName("Hong Quang");
+//        customer2.setCustomerId("079025000002");
+//        bank.addCustomer(customer2);
+//
+//        Account account2 = new Account();
+//        account2.setAccountNumber("654123");
+//        account2.setBalance(1000000);
+//        bank.addCustomer("037153000003", account2);
+//
+//        Customer customer3 = new Customer();
+//        customer3.setName("Quang Minh");
+//        customer3.setCustomerId("001215000002");
+//        bank.addCustomer(customer3);
+//
+//        Account account5 = new Account();
+//        account5.setAccountNumber("123455");
+//        account5.setBalance(1000000);
+//        bank.addCustomer(customer3.getCustomerId(), account5);
+//
+//        Account account6 = new Account();
+//        account6.setAccountNumber("111114");
+//        account6.setBalance(100000000);
+//        bank.addCustomer(customer3.getCustomerId(), account6);
+//
+//        Customer customer4 = new Customer();
+//        customer4.setName("Hong Minh");
+//        customer4.setCustomerId("001215000003");
+//        bank.addCustomer(customer4);
+//
+//        Account account7 = new Account();
+//        account7.setAccountNumber("123457");
+//        account7.setBalance(1000000);
+//        bank.addCustomer(customer4.getCustomerId(), account7);
+//    }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
