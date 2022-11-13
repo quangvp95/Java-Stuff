@@ -45,7 +45,15 @@ public class Customer extends User {
                 + " | " + String.format("%15.0f", getBalance())+ "đ");
         for (int i = 0; i < accounts.size(); i++) {
             Account acc = accounts.get(i);
-            System.out.println((i + 1) + "   " + acc);
+            System.out.println((i + 1) + "     " + acc);
         }
+    }
+
+    public boolean isAccountExisted(int accountId) {
+        for (Account acc : accounts) {
+            if (acc.getAccountNumber().equals(String.valueOf(accountId)))
+                return true;
+        }
+        return false;
     }
 }
