@@ -8,7 +8,6 @@ import vn.funix.xM01892.java.asm02.models.Customer;
 import java.util.List;
 import java.util.Scanner;
 
-@SuppressWarnings("SameParameterValue")
 public class Asm02 {
 
     private static final Bank bank = new Bank();

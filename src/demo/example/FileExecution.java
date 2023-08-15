@@ -2,9 +2,14 @@ package demo.example;
 
 import java.io.*;
 import java.nio.channels.FileChannel;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
 public class FileExecution {
+	private static final String[][] MAP = {{""}};
 
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
@@ -19,7 +24,7 @@ public class FileExecution {
 			String dst = "/home/quangnh/Work/chromium_2/browser/src/" + line;
 
 			try {
-				copyFileUsingChannel(new File(src), new File(dst));
+				renameFileUsingChannel(new File(src), new File(dst));
 			} catch (Exception e) {
 				System.out.println("Error : " + line);
 				e.printStackTrace();
@@ -57,6 +62,15 @@ public class FileExecution {
 			sourceChannel.close();
 			destChannel.close();
 		}
+	}
+
+	private static void renameFileUsingChannel(File source, File dest) throws IOException {
+		System.out.println(source.getAbsolutePath() + " | " + source.exists());
+		System.out.println(dest.getAbsolutePath() + " | " + dest.exists());
+
+		Path sourceDir = Paths.get(source.getAbsolutePath());
+		Path newdir = Paths.get(dest.getAbsolutePath());
+		Files.move(sourceDir, newdir.resolve(sourceDir.getFileName()), StandardCopyOption.REPLACE_EXISTING);
 	}
 
 }
